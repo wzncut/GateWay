@@ -30,6 +30,12 @@ export default class RootScene extends Component<Props> {
   //   //建表
   //   sqLite.createTable();
   // }
+  constructor(Props){
+    super(Props)
+
+    this.state = {
+    }
+  }
 
   render() {
     return (
@@ -46,7 +52,7 @@ const Bottom = createBottomTabNavigator({
         header:null,
       tabBarLabel: '设备',
       tabBarIcon:({focused,tintColor})=>(
-        <MaterialCommunityIcons name={focused?'settings' : 'settings-outline'} size={20} color={tintColor}/>
+        <MaterialCommunityIcons name={focused?'settings' : 'settings-outline'} size={20} color={'#0066cc'}/>
       )
     }
   },
@@ -55,7 +61,7 @@ const Bottom = createBottomTabNavigator({
     navigationOptions:{
       tabBarLabel: '情景模式',
       tabBarIcon:({focused,tintColor})=>(
-        <MaterialCommunityIcons name={focused?'lightbulb-on' : 'lightbulb-on-outline'} size={20} color={tintColor}/>
+        <MaterialCommunityIcons name={focused?'lightbulb-on' : 'lightbulb-on-outline'} size={20}  color={'#0066cc'}/>
       ),
     }
   },
@@ -64,7 +70,7 @@ const Bottom = createBottomTabNavigator({
     navigationOptions:{
       tabBarLabel: '我的设置',
       tabBarIcon:({focused,tintColor})=>(
-        <MaterialIcons name={focused?'person' : 'person-outline'} size={20} color={tintColor}/>
+        <MaterialIcons name={focused?'person' : 'person-outline'} size={20}  color={'#0066cc'}/>
       ),
     }
   }

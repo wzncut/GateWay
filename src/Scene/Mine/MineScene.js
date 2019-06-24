@@ -26,7 +26,7 @@ export default class MineScene extends Component<Props> {
           </View>
           <View style={styles.cencerBar}>
             <Image source={require('../../images/timg.jpg')} style={{height:75,width:75,marginTop:30}}></Image>
-            <Text style={{fontSize:20 ,color:'black' ,textAlign:'center',marginTop:20}}>用户名：nb</Text>
+            <Text style={{fontSize:20 ,color:'black' ,textAlign:'center',marginTop:20}}>用户名：</Text>
           </View>
        </ImageBackground>
 
@@ -104,7 +104,8 @@ const styles = StyleSheet.create({
   },
   TopBar:{
     height:40,
-    backgroundColor:'#F5FCFF',
+    backgroundColor:'#0066cc',
+    // backgroundColor:'#F5FCFF',
     justifyContent:'center',
     alignItems:'center'
   },

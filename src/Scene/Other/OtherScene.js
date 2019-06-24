@@ -12,13 +12,7 @@ import theme from '../../widget/theme'
 import SimpleLineIcon from 'react-native-vector-icons/SimpleLineIcons'
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import dgram from 'react-native-udp'
-// import DataRequest from '../../client/entity/DataRequest'
-// import net from 'react-native-tcp'
-// import SQLite from '../../db/SQLite'
-// import HomeLog from '../../client/entity/HomeLog'
 
-// var sqLite = new SQLite();
-// var db;
 var Dimensions = require('Dimensions');
 const { width, height } = Dimensions.get('window');
 type Props = {};
@@ -52,72 +46,7 @@ export default class OtherScene extends Component<Props> {
     // })
     // console.log(this.state.ip + this.state.mess + this.state.port)
   }
-  // //控制黄灯关
-  // SendUDPYc = (port, ip, mess) => {
-  //   let socket = dgram.createSocket('udp4')
-  //   socket.bind(parseInt('8889'))
-  //   // socket.once('listening', () => {
-  //   const buf = this.toByteArray(mess)
-  //   socket.send(buf, 0, buf.length, parseInt(port), `${ip}`, () => {
-  //     // if (err) throw err
-  //     // console.log('message was sent') 
-  //     // socket.on('message', function(msg, rinfo) {
-  //     //   console.log('receiving') 
-  //     //   var str= String.fromCharCode.apply(null, new Uint8Array(msg))
-  //     //   console.log('message was received', str)
-  //     //     this.setState({
-  //     //     msg:msg
-  //     // })
-  //     // })
-  //     socket.close()
-  //   })
-  //   // })
-  //   // console.log(this.state.ip + this.state.mess + this.state.port)
-  // }
-  // //控制黄灯开
-  // SendUDPYo = (port, ip, mess) => {
-  //   let socket = dgram.createSocket('udp4')
-  //   socket.bind(parseInt('8889'))
-  //   // socket.once('listening', () => {
-  //   const buf = this.toByteArray(mess)
-  //   socket.send(buf, 0, buf.length, parseInt(port), `${ip}`, () => {
-  //     // if (err) throw err
-  //     // console.log('message was sent') 
-  //     //     socket.on('message', function(msg, rinfo) {
-  //     //       console.log('receiving') 
-  //     //       var str= String.fromCharCode.apply(null, new Uint8Array(msg))
-  //     //       console.log('message was received', str)
-  //     //   //     this.setState({
-  //     //   //     msg:msg
-  //     //   // })
-  //     // })
-  //     socket.close()
-  //   })
-  //   // })
-  //   // console.log(this.state.ip + this.state.mess + this.state.port)
-  // }
-  // //控制黄灯关
-  // SendUDPYc = (port, ip, mess) => {
-  //   let socket = dgram.createSocket('udp4')
-  //   socket.bind(parseInt('8889'))
-  //   // socket.once('listening', () => {
-  //   const buf = this.toByteArray(mess)
-  //   socket.send(buf, 0, buf.length, parseInt(port), `${ip}`, () => {
-  //     // if (err) throw err
-  //     // console.log('message was sent') 
-  //     // socket.on('message', function(msg, rinfo) {
-  //     //   console.log('receiving') 
-  //     //   var str= String.fromCharCode.apply(null, new Uint8Array(msg))
-  //     //   console.log('message was received', str)
-  //     //     this.setState({
-  //     //     msg:msg
-  //     // })
-  //     // })
-  //     socket.close()
-  //   })
-  //   // })
-  //   // console.log(this.state.ip + this.state.mess + this.state.port)
-  // }
+ 
   render() {
     return (
       <View style={styles.container}>
@@ -140,23 +69,23 @@ export default class OtherScene extends Component<Props> {
            <View style={{height:1,color:'black'}}></View> */}
 
             <View style={styles.light}>
-              <Text>就餐模式</Text>
+              <Text style={{fontSize:20}}>就餐模式</Text>
               <View style={{flex: 1}}/>
-              <TouchableOpacity onPress={() => { this.SendUDP('4567', '192.168.1.111', '0A wm 123456 s811 1') }}>
+              <TouchableOpacity onPress={() => { this.SendUDP('4567', '192.168.1.104', '0A wm 123456 s811 1') }}>
                 <Text style={styles.Text}>开</Text>
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => { this.SendUDP('4567', '192.168.1.111', '0A wm 123456 s811 0') }}>
+              <TouchableOpacity onPress={() => { this.SendUDP('4567', '192.168.1.104', '0A wm 123456 s811 0') }}>
                 <Text style={styles.Text}>关</Text>
               </TouchableOpacity>
             </View>
             <View style={{height:1,color:'black'}}></View>
             <View style={styles.light}>
-              <Text>归家模式</Text>
+              <Text style={{fontSize:20}}>归家模式</Text>
               <View style={{flex: 1}}/>
-              <TouchableOpacity onPress={() => { this.SendUDP('4567', '192.168.1.111', '0A wm 123456 s710 1') }}>
+              <TouchableOpacity onPress={() => { this.SendUDP('4567', '192.168.1.104', '0A wm 123456 s710 1') }}>
                 <Text style={styles.Text}>开</Text>
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => { this.SendUDP('4567', '192.168.1.111', '0A wm 123456 s710 0') }}>
+              <TouchableOpacity onPress={() => { this.SendUDP('4567', '192.168.1.104', '0A wm 123456 s710 0') }}>
                 <Text style={styles.Text}>关</Text>
               </TouchableOpacity>
             </View>
@@ -176,7 +105,8 @@ const styles = StyleSheet.create({
   },
   TopBar: {
     height: 40,
-    backgroundColor: '#F5FCFF',
+    // backgroundColor: '#F5FCFF',
+    backgroundColor:'#0066cc',
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row'
@@ -194,7 +124,7 @@ const styles = StyleSheet.create({
   },
   Text: {
     //flex: 1,
-    color: '#333333',
+    // color: '#333333',
     fontSize: 16,
     marginLeft: width * 0.03,
     alignItems: 'center',
@@ -203,7 +133,7 @@ const styles = StyleSheet.create({
   light: {
     flexDirection: 'row',
     backgroundColor: 'white',
-    height: 40,
+    height: 70,
     alignItems: 'center',
     justifyContent: 'center'
   }
